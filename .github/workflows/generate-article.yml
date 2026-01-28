@@ -34,11 +34,9 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git fetch origin main
-          git reset --soft origin/main
-          git add *.html
-          git add styles.css script.js
+          git add *.html styles.css script.js
           git diff --staged --quiet || git commit -m "Add weekly article - $(date +%Y-%m-%d)"
+          git pull --rebase origin main
           git push origin main
 
       - name: Checkout latest for deploy
