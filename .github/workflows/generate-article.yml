@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,19 +33,18 @@ jobs:
       - name: Update insights page
         run: python scripts/update_insights.py
 
-      - name: Commit new article
+      - name: Commit and push new article
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git add *.html styles.css script.js
-          git diff --staged --quiet || git commit -m "Add weekly article - $(date +%Y-%m-%d)"
-          git pull --rebase origin main
-          git push origin main
-
-      - name: Checkout latest for deploy
-        uses: actions/checkout@v4
-        with:
-          ref: main
+          # Add all changes EXCEPT .github directory to avoid workflow permission errors
+          git add -A -- ':!.github'
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Add weekly article - $(date +%Y-%m-%d)"
+            git push origin main
+          fi
 
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -55,5 +57,6 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            **/.github/**
             **/scripts/**
             **/node_modules/**

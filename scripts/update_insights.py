@@ -55,9 +55,12 @@ def main():
     if metadata:
         update_insights_page(metadata)
 
-        # Clean up
-        os.remove('scripts/latest_article.json')
-        print("Cleaned up temporary files")
+        # Clean up (ignore if file already removed)
+        try:
+            os.remove('scripts/latest_article.json')
+            print("Cleaned up temporary files")
+        except FileNotFoundError:
+            pass
 
 if __name__ == "__main__":
     main()
