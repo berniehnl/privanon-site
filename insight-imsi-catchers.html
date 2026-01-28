@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Understanding IMSI Catchers and cell-site simulators - threats to mobile communications security in defense operations">
+    <title>Understanding IMSI Catchers | Privanon LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">&#9670;</span>
+                PRIVANON
+                <span class="logo-division">A Division of BKW</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="index.html#technology">Technology</a></li>
+                <li><a href="insights.html" class="active">Insights</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-page">
+        <div class="container">
+            <div class="article-header">
+                <a href="insights.html" class="back-link">&larr; Back to Insights</a>
+                <div class="insight-meta">
+                    <span class="insight-category">Threat Analysis</span>
+                    <span class="insight-date">January 2026</span>
+                </div>
+                <h1>Understanding IMSI Catchers: The Invisible Threat to Mobile Communications</h1>
+                <p class="article-subtitle">How cell-site simulators compromise operational security and what defense organizations need to know about protecting mobile identities in contested environments.</p>
+            </div>
+
+            <div class="article-content">
+                <h2>The Silent Surveillance Problem</h2>
+                <p>Every mobile device carries a unique identifier called an International Mobile Subscriber Identity (IMSI). This 15-digit number, stored on your SIM card, is transmitted whenever your phone connects to a cellular network. For adversaries, intercepting this identifier is trivially easy—and devastatingly effective.</p>
+
+                <p>IMSI catchers, also known as cell-site simulators or by the brand name "Stingray," are devices that masquerade as legitimate cell towers. When your phone searches for a network signal, it naturally connects to the strongest available tower. An IMSI catcher exploits this behavior by broadcasting a powerful signal that forces nearby devices to connect to it instead of the real network.</p>
+
+                <h2>What Attackers Gain</h2>
+                <p>Once connected to an IMSI catcher, an adversary can:</p>
+                <ul>
+                    <li><strong>Identify and track individuals</strong> — The IMSI uniquely identifies the device owner, enabling location tracking and pattern-of-life analysis</li>
+                    <li><strong>Map personnel movements</strong> — By deploying catchers at strategic locations, adversaries can monitor who enters and exits sensitive facilities</li>
+                    <li><strong>Intercept communications</strong> — Some advanced catchers can downgrade encryption or capture call and SMS content</li>
+                    <li><strong>Deny service</strong> — Catchers can selectively block communications from targeted devices</li>
+                </ul>
+
+                <h2>The Proliferation Problem</h2>
+                <p>A decade ago, IMSI catchers were expensive, classified equipment available only to nation-state intelligence agencies. Today, the landscape has fundamentally changed:</p>
+
+                <ul>
+                    <li>Commercial IMSI catchers are available for under $1,500</li>
+                    <li>Software-defined radio (SDR) platforms enable hobbyists to build functional catchers</li>
+                    <li>Open-source projects provide detailed implementation guides</li>
+                    <li>State actors have deployed catchers near military installations, embassies, and government buildings worldwide</li>
+                </ul>
+
+                <p>This proliferation means that defense personnel, contractors, and anyone involved in sensitive operations must assume their mobile communications are being monitored whenever operating in non-secure environments.</p>
+
+                <h2>Why Traditional Countermeasures Fail</h2>
+                <p>Standard advice—use encrypted messaging apps, avoid public WiFi—doesn't address the fundamental vulnerability. The IMSI is transmitted <em>before</em> any application-layer encryption occurs. Your phone identifies itself to the network (or fake network) at the hardware level, and no app can prevent this.</p>
+
+                <p>Even "secure" phones with hardened operating systems transmit their IMSI during network registration. The vulnerability exists in the cellular protocol itself, not in the software running on the device.</p>
+
+                <h2>The Path Forward: IMSI Obfuscation</h2>
+                <p>Effective protection requires intervention at the protocol level—changing how the device identifies itself to the network. This is the approach Privanon has developed with our IMSI Obfuscation technology:</p>
+
+                <ul>
+                    <li><strong>Real-time IMSI rotation</strong> — The identifier presented to the network changes dynamically, breaking the link between device and operator</li>
+                    <li><strong>Catcher detection</strong> — Anomaly detection identifies the signatures of illegitimate base stations</li>
+                    <li><strong>Transparent operation</strong> — Legitimate network connectivity is maintained; only the surveillance capability is defeated</li>
+                    <li><strong>No carrier modification required</strong> — The solution operates independently of network operator cooperation</li>
+                </ul>
+
+                <h2>Operational Implications</h2>
+                <p>For defense organizations, the implications are clear: standard mobile devices are a liability in contested environments. Any operation where adversary SIGINT capability exists requires either:</p>
+
+                <ol>
+                    <li>Complete prohibition of mobile devices (often impractical)</li>
+                    <li>Dedicated secure communications equipment (expensive, limited)</li>
+                    <li>IMSI obfuscation technology that allows operational flexibility while defeating surveillance</li>
+                </ol>
+
+                <p>The third option provides the best balance of security and operational capability—maintaining the convenience and global coverage of cellular networks while eliminating the identity exposure that makes them dangerous.</p>
+
+                <div class="article-cta">
+                    <h3>Learn More About IMSI Protection</h3>
+                    <p>Contact Privanon for a classified briefing on our IMSI Obfuscation technology and how it can protect your operational personnel.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Request Briefing</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">&#9670;</span>
+                        PRIVANON
+                    </a>
+                    <p>Defense-grade communications and network security.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="index.html#solutions">PTUS</a></li>
+                        <li><a href="index.html#solutions">IMSI Obfuscation</a></li>
+                        <li><a href="index.html#solutions">Port Hopping</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#technology">Technology</a></li>
+                        <li><a href="insights.html">Insights</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Privanon LLC. A Division of BKW. All rights reserved.</p>
+                <p class="footer-legal">ITAR and export control regulations may apply to our products and services.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
