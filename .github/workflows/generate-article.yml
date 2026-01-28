@@ -36,7 +36,8 @@ jobs:
           git config user.email "action@github.com"
           git fetch origin main
           git reset --soft origin/main
-          git add -A
+          git add *.html
+          git add styles.css script.js
           git diff --staged --quiet || git commit -m "Add weekly article - $(date +%Y-%m-%d)"
           git push origin main
 
