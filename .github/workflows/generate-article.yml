@@ -40,6 +40,11 @@ jobs:
           git diff --staged --quiet || git commit -m "Add weekly article - $(date +%Y-%m-%d)"
           git push origin main
 
+      - name: Checkout latest for deploy
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
