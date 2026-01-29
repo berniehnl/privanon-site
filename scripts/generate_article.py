@@ -254,6 +254,7 @@ def create_article_html(title, subtitle, content, category, slug):
                         <li><a href="index.html#about">About</a></li>
                         <li><a href="index.html#technology">Technology</a></li>
                         <li><a href="insights.html">Insights</a></li>
+                        <li><a href="swag.html">Swag</a></li>
                         <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
