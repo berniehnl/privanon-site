@@ -1,0 +1,120 @@
+name: Auto Post to X
+
+on:
+  schedule:
+    # 9 AM HST = 19:00 UTC (HST is UTC-10)
+    - cron: '0 19 * * *'
+    # 3 PM HST = 01:00 UTC next day
+    - cron: '0 1 * * *'
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic tweepy python-dotenv
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate_article.py
+
+      - name: Update insights page
+        run: python scripts/update_insights.py
+
+      - name: Post to X
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+        run: |
+          python -c "
+          import json
+          import tweepy
+          from anthropic import Anthropic
+          import os
+
+          # Load article metadata
+          with open('scripts/latest_article.json', 'r') as f:
+              metadata = json.load(f)
+
+          # Generate tweet
+          client = Anthropic()
+          prompt = f'''Generate a single tweet to promote this defense technology article.
+
+          ARTICLE:
+          Title: {metadata['title']}
+          Subtitle: {metadata['subtitle']}
+          Category: {metadata['category']}
+
+          REQUIREMENTS:
+          - Max 250 characters (leave room for the link)
+          - Professional but engaging tone
+          - Include 1-2 relevant hashtags like #DefenseTech #CyberSecurity
+          - Do NOT include the URL (it will be added automatically)
+
+          Respond with ONLY the tweet text, nothing else.'''
+
+          message = client.messages.create(
+              model='claude-sonnet-4-20250514',
+              max_tokens=100,
+              messages=[{'role': 'user', 'content': prompt}]
+          )
+          tweet_text = message.content[0].text.strip()
+
+          # Post to X
+          x_client = tweepy.Client(
+              consumer_key=os.environ['X_API_KEY'],
+              consumer_secret=os.environ['X_API_SECRET'],
+              access_token=os.environ['X_ACCESS_TOKEN'],
+              access_token_secret=os.environ['X_ACCESS_TOKEN_SECRET']
+          )
+
+          article_url = f'https://www.privanon.com/{metadata[\"filename\"]}'
+          full_tweet = f'{tweet_text}\n\n{article_url}'
+
+          response = x_client.create_tweet(text=full_tweet)
+          print(f'Posted to X! Tweet ID: {response.data[\"id\"]}')
+          "
+
+      - name: Commit and push new article
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add -A -- ':!.github'
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-post article - $(date +%Y-%m-%d)"
+            git push origin main
+          fi
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /domains/privanon.com/public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/scripts/**
+            **/venv/**
