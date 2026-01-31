@@ -99,7 +99,7 @@ jobs:
         run: |
           git config user.name "GitHub Action"
           git config user.email "action@github.com"
-          git add -A -- ':!.github'
+          git add -A -- ':!.github' ':!scripts/article_for_posting.json'
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
