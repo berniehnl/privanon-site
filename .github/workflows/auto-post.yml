@@ -104,6 +104,7 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-post article - $(date +%Y-%m-%d)"
+            git pull --rebase origin main
             git push origin main
           fi
 
