@@ -32,6 +32,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/generate_article.py
 
+      - name: Save article metadata
+        run: cp scripts/latest_article.json scripts/article_for_posting.json
+
       - name: Update insights page
         run: python scripts/update_insights.py
 
@@ -49,8 +52,8 @@ jobs:
           from anthropic import Anthropic
           import os
 
-          # Load article metadata
-          with open('scripts/latest_article.json', 'r') as f:
+          # Load article metadata (saved before update_insights deleted it)
+          with open('scripts/article_for_posting.json', 'r') as f:
               metadata = json.load(f)
 
           # Generate tweet
