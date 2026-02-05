@@ -78,33 +78,51 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-
-            // Here you would typically send to a backend
-            // For now, show a success message
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
-
+            
+            // Disable button and show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            // Simulate sending (replace with actual API call)
-            setTimeout(() => {
-                submitBtn.textContent = 'Message Sent!';
-                submitBtn.style.background = '#10b981';
+            const formData = new FormData(this);
 
-                // Reset form
-                this.reset();
-
-                // Reset button after delay
+            fetch('contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    submitBtn.textContent = 'Message Sent!';
+                    submitBtn.style.background = '#10b981';
+                    
+                    // Reset form
+                    this.reset();
+                    
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitBtn.textContent = 'Error - Try Again';
+                submitBtn.style.background = '#ef4444'; // Red color for error
+                
                 setTimeout(() => {
                     submitBtn.textContent = originalText;
                     submitBtn.style.background = '';
                     submitBtn.disabled = false;
                 }, 3000);
-            }, 1000);
+                
+                alert('Failed to send message: ' + error.message);
+            });
         });
     }
 

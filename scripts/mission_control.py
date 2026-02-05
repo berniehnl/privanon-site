@@ -72,7 +72,7 @@ DATA:
 REQUIREMENTS:
 1. Tone: Professional, Unapologetic, Defense-focused (Hegseth style).
 2. Content: 3 main bullet points identifying key threats or shifts in the defense landscape.
-3. Call to Action: How Privanon's capabilities (Obfuscation, Port Hopping) mitigate these shifts.
+3. Call to Action: How Privanon's capabilities (Obfuscation, Rolling Rendezvous) mitigate these shifts.
 4. Social: Draft one punchy X (Twitter) post (max 280 chars) to broadcast this intel.
 
 OUTPUT FORMAT (JSON):

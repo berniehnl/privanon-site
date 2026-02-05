@@ -101,7 +101,7 @@ REQUIREMENTS:
 - Professional, authoritative tone suitable for defense/intelligence audience
 - Include practical insights, not just theory
 - Structure with clear H2 headings
-- End with how Privanon's solutions (PTUS, IMSI Obfuscation, Dynamic Port Hopping) address these challenges
+- End with how Privanon's solutions (PTUS, IMSI Obfuscation, Rolling Rendezvous) address these challenges
 - Do not use markdown formatting - output plain text with heading markers
 
 FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
@@ -202,7 +202,7 @@ def create_article_html(title, subtitle, content, category, slug):
                     <ul>
                         <li><a href="index.html#solutions">PTUS</a></li>
                         <li><a href="index.html#solutions">IMSI Obfuscation</a></li>
-                        <li><a href="index.html#solutions">Port Hopping</a></li>
+                        <li><a href="index.html#solutions">Rolling Rendezvous</a></li>
                     </ul>
                 </div>
 ...
@@ -259,7 +259,7 @@ def create_article_html(title, subtitle, content, category, slug):
                     <ul>
                         <li><a href="index.html#solutions">PTUS</a></li>
                         <li><a href="index.html#solutions">IMSI Obfuscation</a></li>
-                        <li><a href="index.html#solutions">Port Hopping</a></li>
+                        <li><a href="index.html#solutions">Rolling Rendezvous</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">

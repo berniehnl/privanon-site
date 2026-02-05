@@ -1,0 +1,183 @@
+========================================
+Auto-post started: Tue Feb  3 15:00:01 HST 2026
+==================================================
+PRIVANON CONTENT WORKFLOW
+Timestamp: 2026-02-03 15:00:02
+==================================================
+
+[*] Daily post limit: 3/3 remaining
+
+--- STEP 1: Generate Article ---
+Found 16 existing articles
+Selected topic: Quantum Computing Threats to Current Encryption Standards
+Generating article with Claude...
+Title: The Quantum Cryptographic Apocalypse: Preparing Defense Networks for Post-Quantum Reality
+Slug: insight-the-quantum-cryptographic-apocalypse-preparing-def
+Created: insight-the-quantum-cryptographic-apocalypse-preparing-def.html
+Done!
+
+--- STEP 2: Update Insights Page ---
+Added 'The Quantum Cryptographic Apocalypse: Pr...' to insights.html
+Cleaned up temporary files
+
+--- STEP 3: Post to X ---
+[*] Generating tweet for: The Quantum Cryptographic Apocalypse: Preparing De...
+
+--- GENERATED TWEET ---
+The quantum cryptographic apocalypse is approaching fast. Defense networks have a narrowing window to deploy quantum-resistant security before adversaries gain the upper hand. Are you prepared for post-quantum reality? #DefenseTech #CyberSecurity
+
+Link: https://www.privanon.com/insight-the-quantum-cryptographic-apocalypse-preparing-def.html
+-----------------------
+[+] Posted to X! Tweet ID: 2018852172918927515
+    https://x.com/i/web/status/2018852172918927515
+
+==================================================
+WORKFLOW COMPLETE
+==================================================
+
+Next steps:
+1. Review the generated article
+2. Deploy to Hostinger:
+   tar -czvf deploy.tar.gz -C . .
+   # Then use MCP: hosting_deployStaticWebsite
+Auto-post finished: Tue Feb  3 15:00:42 HST 2026
+
+========================================
+Auto-post started: Wed Feb  4 11:31:27 HST 2026
+==================================================
+PRIVANON CONTENT WORKFLOW
+Timestamp: 2026-02-04 11:31:28
+==================================================
+
+[*] Daily post limit: 3/3 remaining
+
+--- STEP 1: Generate Article ---
+Found 17 existing articles
+Selected topic: 5G Security Implications for Defense Operations
+Generating article with Claude...
+Traceback (most recent call last):
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1072, in request
+    response = self._client.send(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/workflow.py", line 186, in <module>
+    main()
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/workflow.py", line 182, in main
+    run_full_workflow(dry_run=args.dry_run, skip_post=args.skip_post)
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/workflow.py", line 87, in run_full_workflow
+    generate_article()
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/generate_article.py", line 297, in main
+    raw_content = generate_article(topic)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/generate_article.py", line 115, in generate_article
+    message = client.messages.create(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/anthropic/_utils/_utils.py", line 282, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/anthropic/resources/messages/messages.py", line 950, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1364, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/berni/mcp/hostinger/privanon-site/scripts/venv/lib/python3.12/site-packages/anthropic/_base_client.py", line 1104, in request
+    raise APIConnectionError(request=request) from err
+anthropic.APIConnectionError: Connection error.
+Auto-post finished: Wed Feb  4 11:31:40 HST 2026
+
+========================================
+Auto-post started: Wed Feb  4 16:00:24 HST 2026
+==================================================
+PRIVANON CONTENT WORKFLOW
+Timestamp: 2026-02-04 16:00:25
+==================================================
+
+[*] Daily post limit: 3/3 remaining
+
+--- STEP 1: Generate Article ---
+Found 17 existing articles
+Selected topic: Hardware Security Modules: The Foundation of Trust
+Generating article with Claude...
+Title: Hardware Security Modules: The Foundation of Trust in Defense Communications
+Slug: insight-hardware-security-modules-the-foundation-of-trust-
+Created: insight-hardware-security-modules-the-foundation-of-trust-.html
+Done!
+
+--- STEP 2: Update Insights Page ---
+Added 'Hardware Security Modules: The Foundatio...' to insights.html
+Cleaned up temporary files
+
+--- STEP 3: Post to X ---
+[*] Generating tweet for: Hardware Security Modules: The Foundation of Trust...
+
+--- GENERATED TWEET ---
+Hardware Security Modules form the backbone of secure military communications. Learn why HSMs are essential for tactical operations and key implementation considerations for defense organizations. #DefenseTech #CyberSecurity
+
+Link: https://www.privanon.com/insight-hardware-security-modules-the-foundation-of-trust-.html
+-----------------------
+[+] Posted to X! Tweet ID: 2019229751416877108
+    https://x.com/i/web/status/2019229751416877108
+
+==================================================
+WORKFLOW COMPLETE
+==================================================
+
+Next steps:
+1. Review the generated article
+2. Deploy to Hostinger:
+   tar -czvf deploy.tar.gz -C . .
+   # Then use MCP: hosting_deployStaticWebsite
+Auto-post finished: Wed Feb  4 16:01:04 HST 2026
+

@@ -39,7 +39,7 @@ The vulnerability exists at the protocol level — your phone identifies itself 
 
 ---
 
-### Port Hopping
+### Rolling Rendezvous
 
 **Post 1:**
 ```
@@ -47,7 +47,7 @@ Every network service listens on a known port. SSH on 22. HTTPS on 443.
 
 That predictability is a roadmap for attackers.
 
-Dynamic port hopping applies frequency-hopping principles to network traffic. The target moves before they can aim.
+Dynamic Rolling Rendezvous applies frequency-hopping principles to network traffic. The target moves before they can aim.
 ```
 
 **Post 2:**
@@ -189,7 +189,7 @@ Cryptographic credentials that work without phoning home.
 ```
 Defense-grade communications security.
 
-IMSI obfuscation. Dynamic port hopping. Zero-trust architecture.
+IMSI obfuscation. Dynamic Rolling Rendezvous. Zero-trust architecture.
 
 Privanon.com
 ```
@@ -251,13 +251,13 @@ Nothing is trusted by default. Everything must prove its legitimacy — continuo
 
 ---
 
-### Post 3 - Port Hopping
+### Post 3 - Rolling Rendezvous
 
 **Caption:**
 ```
 Military radio solved the interception problem decades ago with frequency hopping.
 
-Dynamic port hopping applies the same principle to network traffic.
+Dynamic Rolling Rendezvous applies the same principle to network traffic.
 
 Instead of static ports that attackers can target, scan, and flood — both endpoints synchronize to a cryptographic sequence. Ports change at defined intervals.
 
