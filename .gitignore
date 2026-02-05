@@ -1,5 +1,26 @@
+# Environment & Secrets
 .env
-scripts/venv/
-scripts/__pycache__/
+**/.env
+wrapper.js
+test-auth.js
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+env/
+scripts/venv/
+
+# Deployment & Archives
+*.tar.gz
+*.zip
+*.log
+
+# OS & Editor
+.DS_Store
+.vscode/
+.idea/
+*.swp

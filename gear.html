@@ -1,151 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Privanon Gear - Coming Soon">
-  <title>Gear | Privanon LLC</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privanon Gear - Advanced tactical equipment and defense-grade hardware. Coming soon.">
+    <title>Gear | Privanon LLC</title>
+    <link rel="canonical" href="https://www.privanon.com/gear.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      background: #000;
-      min-height: 100vh;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #000;
+            min-height: 100vh;
+        }
 
-    .gear-teaser {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 20px 80px;
-      position: relative;
-      overflow: hidden;
-    }
+        .gear-teaser {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    .gear-teaser::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0, 212, 255, 0.03) 0%, transparent 70%);
-      pointer-events: none;
-    }
+        .gear-teaser::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.03) 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-    .teaser-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      color: #00d4ff;
-      margin-bottom: 2rem;
-      opacity: 0.8;
-    }
+        .teaser-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--color-accent-light);
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
 
-    .teaser-title {
-      font-size: clamp(3rem, 10vw, 8rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: #fff;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
+        .teaser-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
 
-    .teaser-subtitle {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      color: #334155;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 4rem;
-    }
+        .teaser-subtitle {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 4rem;
+        }
 
-    .teaser-line {
-      width: 1px;
-      height: 120px;
-      background: linear-gradient(to bottom, #00d4ff, transparent);
-      margin-bottom: 2rem;
-    }
+        .teaser-line {
+            width: 1px;
+            height: 120px;
+            background: linear-gradient(to bottom, var(--color-accent), transparent);
+            margin-bottom: 2rem;
+        }
 
-    .teaser-status {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: #64748b;
-      letter-spacing: 0.1em;
-    }
+        .teaser-status {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            letter-spacing: 0.1em;
+        }
 
-    .teaser-status span {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: #00d4ff;
-      border-radius: 50%;
-      margin-right: 8px;
-      animation: pulse 2s ease-in-out infinite;
-    }
+        .teaser-status span {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s ease-in-out infinite;
+        }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
-    }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
 
-    /* Scanline effect */
-    .gear-teaser::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0, 0, 0, 0.1) 2px,
-        rgba(0, 0, 0, 0.1) 4px
-      );
-      pointer-events: none;
-      opacity: 0.3;
-    }
-  </style>
+        /* Scanline effect */
+        .gear-teaser::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            pointer-events: none;
+            opacity: 0.3;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">
-        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" width="24" height="24" style="margin-right: 8px;"><path d="M20 20 H50 V90 C30 90 20 70 20 40 V20 Z" fill="currentColor"/><rect x="55" y="20" width="25" height="15" fill="#00d4ff"/><rect x="55" y="40" width="20" height="15" fill="currentColor"/><rect x="55" y="60" width="15" height="15" fill="currentColor"/><rect x="55" y="80" width="10" height="10" fill="currentColor"/></svg>
-        PRIVANON
-        <span class="logo-division">A Division of BKW</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html#solutions">Capabilities</a></li>
-        <li><a href="index.html#technology">Technology</a></li>
-        <li><a href="insights.html">Insights</a></li>
-        <li><a href="leadership.html">Leadership</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg class="brand-mark" viewBox="0 0 100 100" fill="none" width="24" height="24" style="margin-right: 8px;"><path d="M20 20 H50 V90 C30 90 20 70 20 40 V20 Z" fill="currentColor"/><rect x="55" y="20" width="25" height="15" fill="#00d4ff"/><rect x="55" y="40" width="20" height="15" fill="currentColor"/><rect x="55" y="60" width="15" height="15" fill="currentColor"/><rect x="55" y="80" width="10" height="10" fill="currentColor"/></svg>
+                PRIVANON
+                <span class="logo-division">A Division of BKW</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#solutions">Capabilities</a></li>
+                <li><a href="index.html#technology">Technology</a></li>
+                <li><a href="insights.html">Insights</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-  <section class="gear-teaser">
-    <div class="teaser-tag">Classified // Gear Division</div>
-    <h1 class="teaser-title">GEAR</h1>
-    <div class="teaser-subtitle">Coming Soon</div>
-    <div class="teaser-line"></div>
-    <div class="teaser-status"><span></span>In Development</div>
-  </section>
+    <section class="gear-teaser">
+        <div class="teaser-tag">Classified // Gear Division</div>
+        <h1 class="teaser-title">GEAR</h1>
+        <div class="teaser-subtitle">Coming Soon</div>
+        <div class="teaser-line"></div>
+        <div class="teaser-status"><span></span>In Development</div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> Privanon LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
