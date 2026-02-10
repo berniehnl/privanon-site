@@ -742,6 +742,14 @@ section {
     animation-delay: 3s;
 }
 
+.node-4 {
+    top: 35%;
+    right: 5%;
+    /* CIG at ~3 o'clock (90deg) - triggers at 90/360 * 8 = 2s */
+    animation: node-blip 8s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
 /* About Section */
 .about {
     background: var(--color-bg-primary);
