@@ -101,7 +101,7 @@ REQUIREMENTS:
 - Professional, authoritative tone suitable for defense/intelligence audience
 - Include practical insights, not just theory
 - Structure with clear H2 headings
-- End with how Privanon's solutions (PTUS, GHOST PROTOCOL, Rolling Rendezvous, RAPID) address these challenges
+- End with how Privanon's solutions (MIRAGE, GHOST PROTOCOL, Rolling Rendezvous, RAPID) address these challenges
 - Do not use markdown formatting - output plain text with heading markers
 
 FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
@@ -200,7 +200,7 @@ def create_article_html(title, subtitle, content, category, slug):
                 <div class="footer-links">
                     <h4>Capabilities</h4>
                     <ul>
-                        <li><a href="index.html#solutions">PTUS</a></li>
+                        <li><a href="index.html#solutions">MIRAGE</a></li>
                         <li><a href="index.html#solutions">GHOST PROTOCOL</a></li>
                         <li><a href="index.html#solutions">Rolling Rendezvous</a></li>
                         <li><a href="index.html#solutions">RAPID</a></li>
@@ -258,7 +258,7 @@ def create_article_html(title, subtitle, content, category, slug):
                 <div class="footer-links">
                     <h4>Solutions</h4>
                     <ul>
-                        <li><a href="index.html#solutions">PTUS</a></li>
+                        <li><a href="index.html#solutions">MIRAGE</a></li>
                         <li><a href="index.html#solutions">GHOST PROTOCOL</a></li>
                         <li><a href="index.html#solutions">Rolling Rendezvous</a></li>
                         <li><a href="index.html#solutions">RAPID</a></li>
